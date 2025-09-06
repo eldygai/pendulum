@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор вопросов для маятника</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f8ff;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      #questionDisplay {
+        font-size: 1.5em;
+        margin: 30px 0;
+        min-height: 100px;
+        padding: 20px;
+        background-color: #eaf7ff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 32px;
+        font-size: 1.2em;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      .note {
+        margin-top: 25px;
+        font-size: 0.9em;
+        color: #7f8c8d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Генератор вопросов для тренировки с маятником</h1>
+      <div id="questionDisplay">Нажмите кнопку, чтобы начать!</div>
+      <button onclick="generateQuestion()">Новый вопрос</button>
+      <p class="note">
+        Используйте "Да/Нет" или свою систему ответов маятника. Проверяйте
+        результаты позже для анализа точности.
+      </p>
+    </div>
+
+    <script>
+      const questions = [
+        "Сейчас за окном день?",
+        "В соседней комнате есть часы на стене?",
+        "Я держу маятник правой рукой?",
+        "Автомобиль имеет 3 колеса?",
+        "Кофе лучше пить холодным?",
+        "В алфавите больше 30 букв?",
+        "Золото тяжелее серебра?",
+        "Луна больше Земли?",
+        "В моем кармане есть монета?",
+        "Роза — это дерево?",
+        "Энергия в этой комнате спокойная?",
+        "Мой телефон заряжен больше чем на 50%?",
+        "Завтра будет солнечно?",
+        "Вода в стакане комнатной температуры?",
+        "Синий цвет успокаивает нервную систему?",
+        "Кристалл кварца усиливает интуицию?",
+        "Север находится справа от меня?",
+        "Это пространство подходит для медитации?",
+        "Мой пульс сейчас выше 70 ударов в минуту?",
+        "Я смотрел(-а) в окно за последние 10 минут?",
+      ];
+
+      function generateQuestion() {
+        const randomIndex = Math.floor(Math.random() * questions.length);
+        document.getElementById("questionDisplay").innerText =
+          questions[randomIndex];
+      }
+    </script>
+  </body>
+</html>
